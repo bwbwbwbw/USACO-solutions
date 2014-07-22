@@ -11,24 +11,6 @@ LANG: C++11
 
 using namespace std;
 
-string line2;
-
-int isPalindromic(int left, int right)
-{
-    if (right == left + 1) {
-        return -1;
-    }
-
-    while (left < right) {
-        if (line2[left] != line2[right - 1]) {
-            return right;
-        }
-        left++;right--;
-    }
-
-    return -1;
-}
-
 int main()
 {
     ifstream fin("calfflac.in");
@@ -37,6 +19,7 @@ int main()
     string line((std::istreambuf_iterator<char>(fin)),
                  std::istreambuf_iterator<char>());
 
+    string line2;
     line2.reserve(line.size());
 
     map<int, int> mapping;
